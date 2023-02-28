@@ -40,16 +40,23 @@ def watermark_image(input_image_path, output_image_path, watermark_image_path, p
 def main():
     # Get the folder path
     folder = sys.argv[1]
+    print(f"Folder: {folder}")
     # Get the watermark path
     watermark = sys.argv[2]
+    print(f"Watermark: {watermark}")
     # Get the position of the watermark
     position = sys.argv[3]
+    print(f"Position: {position}")
+
     # Loop through the images in the folder
     for filename in os.listdir(folder):
         # Get the path to the image
         input_image_path = os.path.join(folder, filename)
         # Get the path to the output image
         output_image_path = os.path.join(folder, 'watermarked-' + filename)
+
+        print(f"output_image_path : {output_image_path}")
+
         # Watermark the image
         watermark_image(input_image_path, output_image_path, watermark, position)
 
